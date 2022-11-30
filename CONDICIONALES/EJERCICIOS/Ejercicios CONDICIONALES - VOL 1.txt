@@ -1,0 +1,149 @@
+1.- (DEL DOCUMENTO EXPLICADO EN CLASE - ESTRUCTURAS CONDICIONALES - EJEMPLO 8). HACER EL EJERCICIO CON IFS ANIDADOS PARA EL CÁLCULO DE NOTAS
+    COMENZANDO POR EL SUSPENSO, EN VEZ DE POR LA MATRÍCULA DE HONOR.
+
+
+2.- (DEL DOCUMENTO EXPLICADO EN CLASE - ESTRUCTURAS CONDICIONALES - EJEMPLO 10). HACER EL SWITCH PARTIENDO DE LA VARIABLE notas DE TIPO DOUBLE,
+    PRIMERO CON UN CASTING Y DESPUÉS CON UN Math.round COMO SE HIZO EN LA TUTORÍA, Y CONSIDERANDO LA MATRÍCULA DE HONOR SIEMPRE COMO 10 (SIN REDONDEAR)
+ 
+
+3.- AVERIGUAR SI UN AÑO ES BISIESTO. LO ES CADA 4 AÑOS, PERO NO CUANDO EL BISIESTO COINCIDE CON CAMBIO DE SIGLO (TERMINA EN 00), 
+    A NO SER CADA 4 SIGLOS QUE SI SERÁ BISIESTO
+
+
+
+/**
+ * AÑO BISIESTO: cada 4 años es bisiesto, pero no cuando es divisible entre 100, 
+ * y si cuando es divisible entre 400
+ * 
+ * @author XY
+ * @version 1.0 Octubre 2022
+ */
+import java.util.Scanner;
+
+public class EjemCondExtra1{
+      
+    public static void main(String[] args) {
+          
+        Scanner scanner = new Scanner(System.in);
+        int año;
+
+        System.out.print("Introduce el año: ");
+        año = scanner.nextInt();
+    
+        if (año % 400 == 0){
+            System.out.println("Es un año bisiesto.");
+        }else if (año % 100 == 0){
+            System.out.println("No es un año bisiesto");
+        }else if (año % 4 == 0){
+            System.out.println("Es un año bisiesto");
+        }else{
+            System.out.println("No es un año bisiesto");
+        }
+    }
+  }
+
+
+
+4.- CALCULAR EL AREA DE UN TRIANGULO/CUADRADO/RECTANGULO
+
+
+
+/**
+ * Cálculo de Áreas - CUADRADO - RECTÁNGULO - TRIÁNGULO
+ * 
+ * @author XY
+ * @version 1.0 Octubre 2022
+ */
+import java.util.Scanner;
+
+public class EjemCondExtra2 {
+  public static void main(String[] args) {
+  
+    System.out.println(" CÁLCULO DE ÁREAS");
+    System.out.println(" ----------------");
+    System.out.println(" 1. Cuadrado");
+    System.out.println(" 2. Rectángulo");
+    System.out.println(" 3. Triángulo");
+    System.out.print("\n Elija una opción (1-3): ");
+  
+    Scanner sc= new Scanner(System.in);
+    int opcion = sc.nextInt();
+
+    double lado, base, altura;
+
+    
+    switch (opcion) {
+      case 1:
+        System.out.print("\nIntroduzca el lado del cuadrado en cm: ");
+        lado = sc.nextDouble();
+        System.out.println("\nEl área del cuadrado es " + (lado * lado) + " cm2");
+        break;
+    
+      case 2:
+        System.out.print("\nIntroduzca la base del rectángulo en cm: ");
+        base = sc.nextDouble();
+        System.out.print("Introduzca la altura del rectángulo en cm: ");
+        altura = sc.nextDouble();
+        System.out.println("El área del rectángulo es " + (base * altura) + " cm2");
+        break;
+    
+      case 3:
+        System.out.print("\nIntroduzca la base del triángulo en cm: ");
+        base = sc.nextDouble();
+        System.out.print("Introduzca la altura del triángulo en cm: ");
+        altura = sc.nextDouble();
+        System.out.println("El área del triángulo es " + ((base * altura) / 2) + " cm2");
+        break;
+        
+      default:
+        System.out.print("\nLo siento, la opción elegida no es correcta.");
+    }
+  }
+}
+
+
+5. ¿ CUANTOS DÍAS TIENE UN MES ?
+
+
+
+/**
+ * CUANTOS DÍAS TIENE UN MES DADO POR TECLADO
+ * 
+ * @author XY
+ * @version 1.0 Octubre 2022
+ */
+
+import java.util.Scanner;
+
+public class EjemCondExtra3{
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int mes;
+
+    System.out.println("El programa te devuelve el número de días del mes seleccionando:");
+    System.out.println(" 1.- Enero.");
+    System.out.println(" 2.- Febrero.");
+    System.out.println(" 3.- Marzo.");
+    System.out.println(" 4.- Abril.");
+    System.out.println(" 5.- Mayo.");
+    System.out.println(" 6.- Junio.");
+    System.out.println(" 7.- Julio.");
+    System.out.println(" 8.- Agosto.");
+    System.out.println(" 9.- Septiembre.");
+    System.out.println("10.- Octubre.");
+    System.out.println("11.- Noviembre.");
+    System.out.println("12.- Diciembre.");
+    
+    mes = sc.nextInt();
+
+    if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12){
+      System.out.println("El mes seleccionado tiene 31 días");
+    } else if (mes ==2){
+      System.out.println("Febrero tiene 28 días");
+    } else if (mes == 4 || mes == 6 || mes == 9 || mes == 11){
+      System.out.println("El mes seleccionado tiene 30 días");
+    } else {
+      System.out.println("Error, el mes debe estar entre 1-12.");
+    } 
+  }
+}

@@ -1,0 +1,288 @@
+EJERCICIO 0. Bucle personalizado
+/**
+* Se trata de montar un bucle cuyo índice recorra desde un número inicial hasta un número final, ambos introducidos por teclado
+* el tercer datos que se pide ese el SALTO, que será el incremento/decremento de la variable de control del bucle en cada iteración
+* SI EL SALTO introducido es >= 0 entonces el bucle va desde (inicio) -- (fin)  con incremento (salto)
+* SI EL SALTO introducido es < 0 entonces el bucle va desde (fin) -- (inicio)  con decremento (salto)
+*
+* LA "GRACIA" del ejercicio es hacerlo con los 3 tipos de bucles que existen en Java - EJEMPLO CON BUCLE WHILE
+*
+* @author EDUARDO
+* @version 1.0 - Octubre 2022
+*/
+
+import java.util.Scanner;
+public class BuclesClase3Vbles {
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Teclea el número inicial: ");
+        int ini = sc.nextInt();
+        System.out.print("Teclea el número final: ");
+        int fin = sc.nextInt();
+        System.out.print("Teclea el \"salto\" + hacía arriba + hacía abajo: ");
+        int salto = sc.nextInt();
+        
+        if (salto >= 0)
+        {
+            int i = ini;
+            while (i <= fin) {
+                System.out.print(i + " ");
+                i +=Math.abs(salto);
+            }
+            
+        } else {
+            int i = fin;
+            while (i>=ini) {
+                System.out.print(i + " ");
+                i-=Math.abs(salto);
+            }
+        }
+    }
+}
+
+
+EJERCICIO 1. Tabla de multiplicar.
+/**
+* Tabla de multiplicar de un número N dado por teclado
+*
+* @author EDUARDO
+* @version 1.0 - Octubre 2022
+*/
+import java.util.Scanner;
+
+public class Bucles1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Teclea un número entero para ver su TABLA: ");
+        int N = sc.nextInt();
+        for (int i = 0; i <= 10; i++) {
+            System.out.println(N + " x " + i + " = " + N * i);
+        }
+    }
+}
+
+EJERCICIO 2. Números primos.
+/**
+* programa para averiguar si un número introducido por teclado es primo
+*
+* @author EDUARDO
+* @version 1.0 - OCTUBRE 2022
+*/
+import java.util.Scanner;
+
+public class Bucles2 {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner (System.in);
+        System.out.print("Teclea un número entero: ");
+        int num = sc.nextInt();
+        boolean primo = true;
+        for (int i = 2; i < num; i++) {
+            if ((num % i) == 0) {
+                primo = false;
+            }
+        }
+        
+        if (primo) {
+            System.out.println("El número " + num + " es primo");
+        } else {
+                System.out.println("El número " + num + " NO es primo");
+        }
+    }
+}
+
+
+EJERCICIO 3. Darle la vuelta a un número entero (long) de un máximo de 19 cifras.
+/**
+ * Darle la vuelta a un número introducido por teclado (max 19 cifras)
+ * 
+ * @author EDUARDO
+ * @version 1.0 - OCTUBRE 2022
+ */
+import java.util.Scanner;
+
+public class Bucles3
+{
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        String cadena = new String();
+        
+        System.out.print("Introduzca un número entero (max 19 cifras): ");
+        long num = teclado.nextLong(); 
+        
+        cadena = cadena.valueOf(num);
+        
+        System.out.println("El número entero que has intoducido es: " + cadena);
+        System.out.print("El número puesto del revés es: ");
+        
+        int indice = cadena.length();
+    
+        do{
+           System.out.print(cadena.charAt(indice-1));
+           indice--;
+        } while (indice>0);
+    }
+}
+
+
+EJERCICIO 4.
+/**
+ * Dibujar en pantalla una pirámide cuya altura se solicita por teclado.
+ * Para el dibujo se usará un caracter "patrón" que también se solicita por teclado
+ * 
+ * @author EDUARDO
+ * @version 1.0 - OCTUBRE 2022
+ */
+
+import java.util.Scanner;
+
+public class Bucles4 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        
+        System.out.print("Teclea la altura de la altura de la pirámide: ");
+        int altura = sc.nextInt();
+        System.out.print("Teclea el caracter \"patrón\" para dibujar la pirámide    : ");
+        char patron = sc.next().charAt(0);
+        
+        int blancos = altura-1;
+        int caracteres = 1;
+        int fila=1;
+        while (fila <= altura) {
+            //Imprimir los espacios en blanco
+            for (int i = 1; i <= blancos; i++) {
+                System.out.print(" ");
+            }
+            //Imprimir los caracteres "patrón" de la fila actual
+            for (int i = 1; i <= caracteres; i++) {
+                System.out.print(patron);
+            }
+            //Saltar a la siguiente línea
+            System.out.println();
+            fila++;
+            blancos--;
+            caracteres += 2;
+        }
+    }   
+}
+
+
+EJERCICIO 5.
+/**
+ * Dibujar en pantalla un ROMBO cuya altura se solicita por teclado.
+ * La altura se considera la de la mitad del rombo. Es una extensión del problema de
+ * la pirámide visto anteriormente
+ * Para el dibujo se usará un caracter "patrón" que también se solicita por teclado
+ * 
+ * @author EDUARDO
+ * @version 1.0 - OCTUBRE 2022
+ */
+
+
+import java.util.Scanner;
+
+public class Bucles5 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.print("Teclea la altura de la altura de la mitad del rombo: ");
+        int altura = sc.nextInt();
+        System.out.print("Teclea el caracter \"patrón\" para dibujar el rombo: ");
+        char patron = sc.next().charAt(0);
+        
+        int blancos = altura-1;
+        int caracteres = 1;
+        int fila=1;
+        while (fila <= altura) {
+            //Imprimir los espacios en blanco
+            for (int i = 1; i <= blancos; i++) {
+                System.out.print(" ");
+            }
+            //Imprimir los caracteres "patrón" de la fila actual
+            for (int i = 1; i <= caracteres; i++) {
+                System.out.print(patron);
+            }
+            //Saltar a la siguiente línea
+            System.out.println();
+            fila++;
+            blancos--;
+            caracteres += 2;
+        }
+            
+        blancos=1;
+        fila=1;
+        caracteres = (altura * 2) - 3; // para no repetir la fila completa
+        
+        while (fila <= altura) {
+            for (int i=1;i<=blancos;i++)
+            {
+                System.out.print(" ");
+            }
+           
+            for (int i=1;i<=caracteres;i++)
+            {
+                System.out.print(patron);
+            }
+            System.out.println();
+            fila++;
+            blancos++;
+            caracteres-=2;   
+        }        
+    }   
+}
+
+
+EJERCICIO 6.
+/**
+ * Extraer las palabras contenidas en una frase que se solicita por teclado
+ * Escribir por pantalla cada palabra en una línea
+ * 
+ * @author EDUARDO
+ * @version 1.0 - OCTUBRE 2022
+ */
+
+import java.util.Scanner;
+public class Bucles6
+{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Introduzca una frase para descomponer en palabras: ");
+        String frase = new String (sc.nextLine());
+                
+        int i=0, inicioPalabra = 0;
+        while (i < frase.length())  //mientras no alcancemos el final de la frase
+        {
+            while (frase.charAt(i) != ' ')  //mientras no encontremos un espacio en blanco 
+            {
+               i++;
+               if (i == frase.length())  //En la última palabra se acaba la frase, y no encontraremos un blanco
+               {
+                    break;
+               }
+            }
+            System.out.println(frase.substring(inicioPalabra,i)); 	//escribimos palabra
+            i++;                              				 //nos situamos al inicio de la siguiente 
+            inicioPalabra = i;
+        }
+     }
+}
+
+En el ejercicio vamos extrayendo palabra a palabra con el método substring, y podríamos realizar cualquier otro tipo de proceso con cada palabra.
+SI LO QUE ME PIDEN ES SIMPLEMENTE MOSTRARLAS POR PANTALLA una solución muy simplificada sería:
+
+
+ int i=0;
+ while (i < frase.length())  //mientras no alcancemos el final de la frase
+ {
+    if (frase.charAt(i) == ' ')  //Si encontramos un espacio en blanco hacemos un salto de línea, sino vamos escribiendo el String letra a letra en la misma línea
+    {
+	System.out.println();
+    }else{
+	System.out.print(frase.charAt(i));
+    }
+    i++;
+ }
+     
+
+
