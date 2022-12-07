@@ -1,4 +1,4 @@
-package Ejercicios;
+package EXAMEN.Alvaro;
 /**
     2 PUNTOS 
     

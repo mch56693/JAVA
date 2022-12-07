@@ -1,4 +1,4 @@
-package Ejercicios;
+package EXAMEN.Alvaro;
 
 import java.util.Scanner;
 

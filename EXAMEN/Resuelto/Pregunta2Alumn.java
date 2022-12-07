@@ -1,4 +1,6 @@
-/**
+package EXAMEN.RESUELTO;
+
+/*
     2 PUNTOS 
     
     Tenemos un Array de 2 dimensiones llamado faltasAlumn, igual que el de los ejemplos de clase

@@ -1,5 +1,7 @@
+package EXAMEN.RESUELTO;
 
-/**  2 PUNTOS
+/*
+    2 PUNTOS
    
   CON LOS 3 TIPOS de bucles Java que hemos trabajado (for | while | do while)
  
@@ -13,8 +15,9 @@
   SE OBTIENEN 2 PUNTOS SI SE HACE BIEN CON LOS 3 TIPOS DE BUCLE.
  */
 
-public class Pregunta1Alumn
-{
+import java.util.*;
+
+public class Pregunta1Alumn {
     public static void main (String[] args)
     {
         int[] numerosAlumn = {3,4,5,1,6,0,8,11,0,2,4,7};    
